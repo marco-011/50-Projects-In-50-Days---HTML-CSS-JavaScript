@@ -1,0 +1,147 @@
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* CSS variables (reusable values) */
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7); /* left overlay color */
+  --right-bg-color: rgba(43, 43, 43, 0.8); /* right overlay color */
+  --left-btn-hover-color: rgba(87, 84, 236, 1); /* left button hover */
+  --right-btn-hover-color: rgba(28, 122, 28, 1); /* right button hover */
+  --hover-width: 75%; /* width when hovered */
+  --other-width: 25%; /* other side shrink */
+  --speed:500ms;
+}
+
+/* Body styling */
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: 100vh; /* full screen height */
+  overflow: hidden; /* no scroll */
+  margin: 0; /* remove default margin */
+}
+
+/* Title styling */
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%); /* center horizontally */
+  white-space: nowrap; /* prevent line break */
+}
+
+/* Button styling */
+.btn { 
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%); /* center button */
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 15rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Left side button hover */
+.Split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+
+/* Right side button hover */
+.Split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+/* Main container */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+/* Common split style */
+.Split {
+  position: absolute;
+  width: 50%; /* default half screen */
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Left section */
+.Split.left {
+  left: 0;
+  background: url("/Day-7/XboxSeriesS_HERO.jpg"); /* background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Left overlay (color layer on top of image) */
+.Split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+/* Right section */
+.Split.right {
+  right: 0;
+  background: url("/Day-7/playstation-5-pro-3840x2160-19032.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Right overlay */
+.Split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.Split.right, 
+.Split.left,
+ .Split .right::before,
+ .Split .left::before{
+  transition: all var(--speed) ease-in-out;
+}
+/* When hovering left side */
+.hover-left .left {
+  width: var(--hover-width); /* expand left */
+}
+.hover-left .right {
+  width: var(--other-width); /* shrink right */
+}
+
+/* When hovering right side */
+.hover-right .right {
+  width: var(--hover-width); /* expand right */
+}
+.hover-right .left {
+  width: var(--other-width); /* shrink left */
+}
+@media (max-width:800px){
+  h1{
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn{
+width: 12rem;
+padding: 1.2rem;
+  }
+}

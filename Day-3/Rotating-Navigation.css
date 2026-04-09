@@ -1,0 +1,155 @@
+/* Select all elements → include padding & border inside width */
+* {
+  box-sizing: border-box;
+}
+
+/* Body → main page settings */
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; /* Set font */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0; /* Remove default spacing */
+  background-color: #333; /* Dark background */
+  color: #222; /* Default text color */
+}
+
+/* Main container */
+.container {
+  background-color: #fafafa; /* Light content background */
+  transform-origin: top left; /* Rotate from top-left */
+  transition: transform 0.5s linear; /* Smooth animation */
+  width: 100vw; /* Full width */
+  min-height: 100vh; /* Full height */
+  padding: 50px; /* Inner spacing */
+}
+
+/* When nav is active */
+.container.show-nav {
+  transform: rotate(-20deg); /* Rotate page */
+}
+
+/* Circle wrapper */
+.circle-container {
+  position: fixed; /* Fixed on screen */
+  top: -100px; /* Move up */
+  left: -100px; /* Move left */
+}
+
+/* Circle design */
+.circle {
+  background-color: #ff7979; /* Red color */
+  width: 200px; /* Width */
+  height: 200px; /* Height */
+  border-radius: 50%; /* Make circle */
+  position: relative; /* Parent for absolute elements */
+  transition: transform 0.5s linear; /* Smooth rotation */
+}
+
+/* Rotate circle when active */
+.container.show-nav .circle {
+  transform: rotate(-70deg); /* Spin circle */
+}
+
+/* Buttons inside circle */
+.circle button {
+  cursor: pointer; /* Hand cursor */
+  position: absolute; /* Position inside circle */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  height: 100px; /* Button size */
+  background: transparent; /* No background */
+  border: 0; /* Remove border */
+  font-size: 26px; /* Icon size */
+  color: white; /* Icon color */
+}
+
+/* Remove focus outline */
+.circle button:focus {
+  outline: none;
+}
+
+/* Open button position */
+.circle button#open {
+  left: 60%; /* Move right */
+}
+
+/* Close button position */
+.circle button#close {
+  top: 60%; /* Move down */
+  transform: rotate(90deg); /* Rotate icon */
+  transform-origin: top left; /* Rotate from corner */
+}
+
+/* Show nav items when active */
+.container.show-nav + nav ul li {
+  transform: translateX(0); /* Slide into view */
+  transition-delay: 0.3s; /* Delay animation */
+}
+
+/* Navigation container */
+nav {
+  position: fixed; /* Fixed position */
+  bottom: 40px; /* Distance from bottom */
+  left: 0; /* Align left */
+  z-index: 100; /* Above other elements */
+}
+
+/* Nav list */
+nav ul {
+  list-style: none; /* Remove bullets */
+  padding-left: 30px; /* Left spacing */
+}
+
+/* Nav items */
+nav ul li {
+  text-transform: uppercase; /* Uppercase text */
+  color: white; /* Text color */
+  margin: 40px 0; /* Space between items */
+  transform: translateX(-100%); /* Hide left */
+  transition: transform 0.4s ease-in; /* Smooth slide */
+}
+
+/* Icons inside nav */
+nav ul li i {
+  font-size: 20px; /* Icon size */
+  margin-right: 10px; /* Space from text */
+}
+
+/* 2nd item (stagger effect) */
+nav ul li + li {
+  margin-left: 15px; /* Shift right */
+  transform: translateX(-150%); /* More hidden */
+}
+
+/* 3rd item (more delay effect) */
+nav ul li + li + li {
+  margin-left: 30px; /* More shift */
+  transform: translateX(-200%); /* Even more hidden */
+}
+
+/* Image inside content */
+.content img {
+  max-width: 30%; /* Limit image size */
+}
+
+/* Content box */
+.content {
+  max-width: 100%; /* Full width */
+  margin: 52px auto; /* Center with spacing */
+}
+
+/* Heading */
+.content h1 {
+  margin: 0; /* Remove margin */
+}
+
+/* Small text */
+.content small {
+  color: #555; /* Grey color */
+  font-style: italic; /* Italic text */
+}
+
+/* Paragraph */
+.content p {
+  color: #333; /* Text color */
+  line-height: 1.5; /* Better readability */
+}

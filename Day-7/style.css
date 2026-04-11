@@ -83,7 +83,7 @@ h1 {
 /* Left section */
 .Split.left {
   left: 0;
-  background: url("/Day-7/XboxSeriesS_HERO.jpg"); /* background image */
+  background: url("XboxSeriesS_HERO.jpg"); /* background image */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -100,7 +100,7 @@ h1 {
 /* Right section */
 .Split.right {
   right: 0;
-  background: url("/Day-7/playstation-5-pro-3840x2160-19032.jpg");
+  background: url("playstation-5-pro-3840x2160-19032.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -1,0 +1,46 @@
+/* Apply box-sizing to all elements for better layout control */
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body (center everything on screen) */
+body {
+    background-color: #111; /* Dark background */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    display: flex;              /* Use flexbox */
+    align-items: center;        /* Center vertically */
+    justify-content: center;    /* Center horizontally */
+
+    height: 100vh;              /* Full screen height */
+    overflow: hidden;           /* Hide scrollbars */
+    margin: 0;                  /* Remove default margin */
+}
+
+/* Container that holds all squares */
+.container {
+    display: flex;              /* Flex layout */
+    align-items: center;        /* Center items vertically */
+    justify-content: center;    /* Center items horizontally */
+
+    flex-wrap: wrap;            /* Allow squares to wrap to next line */
+    max-width: 400px;           /* Limit width (grid size control) */
+}
+
+/* Each small square box */
+.square {
+    background-color: #1d1d1d;  /* Default dark color */
+    box-shadow: 0 0 2px #000;   /* Small shadow */
+
+    height: 16px;               /* Square height */
+    width: 16px;                /* Square width */
+
+    margin: 2px;                /* Space between squares */
+
+    transition: 2s ease;        /* Smooth transition (color fade out) */
+}
+
+/* When hovering over square */
+.square:hover {
+    transition-duration: 0s;    /* Remove delay → instant color change */
+}

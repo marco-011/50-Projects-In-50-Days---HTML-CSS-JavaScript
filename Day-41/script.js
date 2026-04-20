@@ -25,7 +25,7 @@ async function getData() {
     listItems.push(li);
     // Set the inner HTML of the list item to display the user's picture, name, and location
     li.innerHTML = `
-        // Display the user's picture, name, and location in the list item
+        
             <img src="${user.picture.large}" alt="${user.name.first}">
             // Display the user's name and location in a div
             <div class="user-info">

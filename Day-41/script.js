@@ -27,11 +27,11 @@ async function getData() {
     li.innerHTML = `
         
             <img src="${user.picture.large}" alt="${user.name.first}">
-            // Display the user's name and location in a div
+            
             <div class="user-info">
-                    // Display the user's name in an h4 element
+                   
                 <h4>${user.name.first} ${user.name.last}</h4>
-                // Display the user's location in a p element
+              
                 <p>${user.location.city}, ${user.location.country}</p>
             </div>
         `;
